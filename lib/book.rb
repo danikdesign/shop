@@ -1,14 +1,15 @@
 class Book < Product
 
-  attr_reader :author, :genre
+  attr_accessor :title, :author, :genre
 
   def initialize(params)
     super(params)
+    @title = params[:title]
     @author = params[:author]
     @genre = params[:genre]
   end
 
   def to_s
-    puts "Книга \"#{@title}\", #{@genre}, автор - #{@author}, #{@price} UAH (осталось #{@amount})"
+    "Книга \"#{@title}\", #{@genre}, автор - #{@author}, #{super}"
   end
 end

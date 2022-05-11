@@ -1,14 +1,15 @@
 class Movie < Product
 
-  attr_reader :year, :director
+  attr_accessor :title, :year, :director
 
   def initialize(params)
     super(params)
+    @title = params[:title]
     @year = params[:year]
     @director = params[:director]
   end
 
   def to_s
-    puts "Фильм \"#{@title}\", #{@year}, реж. #{@director}, #{@price} UAH (осталось #{@amount})"
+    "Фильм \"#{@title}\", #{@year}, реж. #{@director}, #{super}"
   end
 end
