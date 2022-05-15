@@ -1,3 +1,6 @@
+Encoding.default_external = Encoding::UTF_8
+Encoding.default_internal = Encoding::UTF_8
+
 class Product
 
   attr_accessor :price, :amount
@@ -9,6 +12,10 @@ class Product
 
   def to_s
     "#{@price} UAH, (осталось #{@amount})"
+  end
+
+  def self.from_file(file_name)
+    raise NotImplementedError
   end
 
 end

@@ -1,13 +1,19 @@
+Encoding.default_external = Encoding::UTF_8
+Encoding.default_internal = Encoding::UTF_8
+
 require_relative 'lib/product.rb'
 require_relative 'lib/movie.rb'
 require_relative 'lib/book.rb'
 
-product = Movie.new(title: "Leon", director: "Luc Besson", price: 990)
 
-product.year = 1994
-product.amount = 5
+book1 = Book.from_file("./data/books/b01.txt")
 
-puts product
+movie1 = Movie.from_file("./data/movies/mov1.txt")
+
+
+puts book1
+puts movie1
+
 
 
 
